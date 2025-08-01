@@ -327,3 +327,6 @@ C:\Users\Coquinha\Documents\arquivos de Dev\Projetos\VSCode.Projetos\paddockCcel
 C:\Users\Coquinha\Documents\arquivos de Dev\Projetos\VSCode.Projetos\paddockCcell\obj\Debug\net9.0\paddockCcell.pdb
 C:\Users\Coquinha\Documents\arquivos de Dev\Projetos\VSCode.Projetos\paddockCcell\obj\Debug\net9.0\paddockCcell.genruntimeconfig.cache
 C:\Users\Coquinha\Documents\arquivos de Dev\Projetos\VSCode.Projetos\paddockCcell\obj\Debug\net9.0\ref\paddockCcell.dll
+D:\Visual Studio\paddockCcell\obj\Debug\net9.0\paddockCcell.sourcelink.json
+D:\Visual Studio\paddockCcell\bin\Debug\net9.0\AutoMapper.dll
+D:\Visual Studio\paddockCcell\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -13,6 +13,7 @@ namespace paddockCcell.Data
 
         public DbSet<Celular> celulares { get; set; }
         public DbSet<Cliente> clientes { get; set; }
+        public DbSet<Orcamento> orcamentos { get; set; }
         public DbSet<OrdemServico> ordemServicos { get; set; }
         public DbSet<Servico> servicos { get; set; }
     }

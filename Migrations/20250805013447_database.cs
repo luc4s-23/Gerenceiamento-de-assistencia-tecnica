@@ -47,6 +47,7 @@ namespace paddockCcell.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Id_Servico_FK = table.Column<int>(type: "int", nullable: false),
                     ValorTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CondicaoPagamento = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -80,23 +81,12 @@ namespace paddockCcell.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NomeServico = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ValorServico = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    OrcamentoId = table.Column<int>(type: "int", nullable: true)
+                    ValorServico = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_servicos", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_servicos_orcamentos_OrcamentoId",
-                        column: x => x.OrcamentoId,
-                        principalTable: "orcamentos",
-                        principalColumn: "Id");
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_servicos_OrcamentoId",
-                table: "servicos",
-                column: "OrcamentoId");
         }
 
         /// <inheritdoc />
@@ -109,13 +99,13 @@ namespace paddockCcell.Migrations
                 name: "clientes");
 
             migrationBuilder.DropTable(
+                name: "orcamentos");
+
+            migrationBuilder.DropTable(
                 name: "ordemServicos");
 
             migrationBuilder.DropTable(
                 name: "servicos");
-
-            migrationBuilder.DropTable(
-                name: "orcamentos");
         }
     }
 }

@@ -10,6 +10,9 @@ namespace paddockCcell
         {
             CreateMap<ClienteDTO, Cliente>()
                 .ForAllMembers(opt => opt.Condition((src, dst, srcMember) => srcMember != null));
+
+            CreateMap<ServicoDTO, Servico>()
+                .ForAllMembers(opt => opt.Condition((src, dst, srcMember) => srcMember != null));
         }
     }
 }

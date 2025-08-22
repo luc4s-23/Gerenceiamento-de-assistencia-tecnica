@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace paddockCcell.Models
 {
@@ -11,7 +8,9 @@ namespace paddockCcell.Models
     {
         [Key]
         public int Id { get; set; }
-        public List<Servico>? ListaServicos { get; set; }
+
+        [ForeignKey("Servico")]
+        public int Id_Servico_FK { get; set; }
         public decimal ValorTotal { get; set; }
         public string? CondicaoPagamento { get; set; }
     }

@@ -12,7 +12,7 @@ using paddockCcell.Data;
 namespace paddockCcell.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250731204605_database")]
+    [Migration("20250805013447_database")]
     partial class database
     {
         /// <inheritdoc />
@@ -80,6 +80,9 @@ namespace paddockCcell.Migrations
                     b.Property<string>("CondicaoPagamento")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Id_Servico_FK")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("ValorTotal")
                         .HasColumnType("decimal(18,2)");
 
@@ -130,29 +133,12 @@ namespace paddockCcell.Migrations
                     b.Property<string>("NomeServico")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("OrcamentoId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("ValorServico")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrcamentoId");
-
                     b.ToTable("servicos");
-                });
-
-            modelBuilder.Entity("paddockCcell.Models.Servico", b =>
-                {
-                    b.HasOne("paddockCcell.Models.Orcamento", null)
-                        .WithMany("ListaServicos")
-                        .HasForeignKey("OrcamentoId");
-                });
-
-            modelBuilder.Entity("paddockCcell.Models.Orcamento", b =>
-                {
-                    b.Navigation("ListaServicos");
                 });
 #pragma warning restore 612, 618
         }

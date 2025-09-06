@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'clientes': 'Cadastro de Clientes',
         'equipamentos': 'Cadastro de Equipamentos',
         'ordens-servico': 'Ordens de Serviço',
-        'estoque': 'Controle de Estoque',
+        'servicos': 'Serviços',
         'orcamentos': 'Orçamentos',
         'historico': 'Histórico de Reparos',
         'relatorios': 'Relatórios e Análises',

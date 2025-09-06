@@ -1,0 +1,501 @@
+/* ========================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ========================================
+   MENU LATERAL ESQUERDO
+   - Fundo cinza conforme solicitado
+   - Hover vermelho conforme solicitado
+   - Espaço para logo conforme solicitado
+======================================== */
+.sidebar {
+    width: 280px;
+    background-color: #6c757d; /* Fundo cinza */
+    color: white;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* === SEÇÃO DO LOGO === */
+.logo-section {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* Espaço para logo clicável */
+.logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.logo-placeholder img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+}
+
+.logo-section h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* === LISTA DE MENU === */
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-items li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Links do menu com hover vermelho conforme solicitado */
+.menu-link {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.menu-link:hover {
+    background-color: #dc3545; /* Hover vermelho conforme solicitado */
+    border-left-color: #fff;
+    transform: translateX(5px);
+}
+
+.menu-link.active {
+    background-color: #dc3545;
+    border-left-color: #fff;
+}
+
+.menu-link .icon {
+    margin-right: 12px;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+/* ========================================
+   ÁREA DE CONTEÚDO PRINCIPAL
+   - Layout principal da aplicação
+======================================== */
+.main-content {
+    flex: 1;
+    margin-left: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === CABEÇALHO DO CONTEÚDO === */
+.header {
+    background: white;
+    padding: 20px 30px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* === ÁREA DE CONTEÚDO DINÂMICO === */
+.content-area {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* Controle de visibilidade das páginas */
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* ========================================
+   PÁGINA 1: DASHBOARD
+   - Cards de estatísticas
+   - Atividades recentes
+======================================== */
+
+/* === GRID DE CARDS === */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid #dc3545;
+}
+
+.dashboard-card h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.card-stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #dc3545;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* === ATIVIDADES RECENTES === */
+.recent-activity {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.recent-activity h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.activity-item {
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border-left: 3px solid #dc3545;
+}
+
+.activity-time {
+    font-weight: bold;
+    color: #dc3545;
+    margin-right: 10px;
+}
+
+/* ========================================
+   FORMULÁRIOS COMPARTILHADOS
+   - Usado nas páginas de cadastro
+   - Clientes, Equipamentos, etc.
+======================================== */
+
+/* === CONTAINER DOS FORMULÁRIOS === */
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+/* Layout em duas colunas */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* === CAMPOS DE ENTRADA === */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #dc3545;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2);
+}
+
+/* === BOTÕES DE AÇÃO === */
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #c82333;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* ========================================
+   TABELAS DE DADOS
+   - Usado para listar clientes, OS, etc.
+======================================== */
+
+/* === CONTAINER DA TABELA === */
+.table-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.table-container h3 {
+    padding: 20px 30px;
+    margin: 0;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+}
+
+/* === ESTRUTURA DA TABELA === */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    background: #f8f9fa;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.data-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Estado vazio */
+.empty-state {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 40px !important;
+}
+
+/* ========================================
+   PÁGINA 4: ORDENS DE SERVIÇO
+   - Controles específicos da página OS
+======================================== */
+
+/* === CONTROLES DA PÁGINA OS === */
+.os-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.filter-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-select,
+.search-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-input {
+    width: 250px;
+}
+
+/* ========================================
+   RESPONSIVIDADE MOBILE
+   - Adaptações para tablets e smartphones
+======================================== */
+
+/* === TABLET (768px) === */
+@media (max-width: 768px) {
+    /* Menu lateral se esconde em mobile */
+    .sidebar {
+        width: 250px;
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    /* Conteúdo ocupa tela toda */
+    .main-content {
+        margin-left: 0;
+    }
+    
+    /* Formulários em coluna única */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Dashboard em coluna única */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Controles OS empilhados */
+    .os-controls {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .filter-controls {
+        justify-content: center;
+    }
+}
+
+/* === SMARTPHONE (480px) === */
+@media (max-width: 480px) {
+    .content-area {
+        padding: 15px;
+    }
+    
+    .header {
+        padding: 15px 20px;
+    }
+    
+    .header h1 {
+        font-size: 20px;
+    }
+    
+    .search-input {
+        width: 200px;
+    }
+}

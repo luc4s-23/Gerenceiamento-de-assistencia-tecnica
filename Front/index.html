@@ -1,35 +1,493 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
+<!-- ========== CABEÇALHO DA PÁGINA ========== -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Assistência Técnica</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <div id="formulario">
+    <!-- ========== CONTAINER PRINCIPAL ========== -->
+    <div class="container">
+        
+        <!-- ========== MENU LATERAL ESQUERDO ========== -->
+        <!-- Sidebar com fundo cinza, hover vermelho e espaço para logo -->
+        <nav class="sidebar">
+            <!-- === SEÇÃO DO LOGO E TÍTULO === -->
+            <div class="logo-section">
+                <div class="logo-placeholder">
+                    <img src="#" alt="Logo" id="logo-img" style="display: none;">
+                    <span class="logo-text">Logo</span>
+                </div>
+                <h2>Assistência Técnica</h2>
+            </div>
+            
+            <!-- === MENU DE NAVEGAÇÃO === -->
+            <!-- Lista com todas as 16 funcionalidades do sistema -->
+            <ul class="menu-items">
+                <!-- 1. Dashboard Principal -->
+                <li><a href="#dashboard" class="menu-link active" data-section="dashboard">
+                    <span class="icon">📊</span>Dashboard
+                </a></li>
+                
+                <!-- 2. Cadastro de Clientes -->
+                <li><a href="#clientes" class="menu-link" data-section="clientes">
+                    <span class="icon">👥</span>Cadastro de Clientes
+                </a></li>
+                
+                <!-- 3. Cadastro de Equipamentos -->
+                <li><a href="#equipamentos" class="menu-link" data-section="equipamentos">
+                    <span class="icon">🔧</span>Cadastro de Equipamentos
+                </a></li>
+                
+                <!-- 4. Ordens de Serviço (OS) -->
+                <li><a href="#ordens-servico" class="menu-link" data-section="ordens-servico">
+                    <span class="icon">📋</span>Ordens de Serviço
+                </a></li>
+                
+                <!-- 5. Controle de Estoque -->
+                <li><a href="#estoque" class="menu-link" data-section="estoque">
+                    <span class="icon">📦</span>Controle de Estoque
+                </a></li>
+                
+                <!-- 6. Orçamentos e Aprovação -->
+                <li><a href="#orcamentos" class="menu-link" data-section="orcamentos">
+                    <span class="icon">💰</span>Orçamentos
+                </a></li>
+                
+                <!-- 7. Histórico de Reparos -->
+                <li><a href="#historico" class="menu-link" data-section="historico">
+                    <span class="icon">📚</span>Histórico de Reparos
+                </a></li>
+                
+                <!-- 8. Relatórios e Análises -->
+                <li><a href="#relatorios" class="menu-link" data-section="relatorios">
+                    <span class="icon">📈</span>Relatórios e Análises
+                </a></li>
+                
+                <!-- 9. Agenda de Técnicos -->
+                <li><a href="#agenda" class="menu-link" data-section="agenda">
+                    <span class="icon">📅</span>Agenda de Técnicos
+                </a></li>
+                
+                <!-- 10. Check-in/Check-out de Equipamentos -->
+                <li><a href="#checkin-checkout" class="menu-link" data-section="checkin-checkout">
+                    <span class="icon">📍</span>Check-in/Check-out
+                </a></li>
+                
+                <!-- 11. Comunicação WhatsApp/SMS -->
+                <li><a href="#comunicacao" class="menu-link" data-section="comunicacao">
+                    <span class="icon">💬</span>Comunicação (WhatsApp/SMS)
+                </a></li>
+                
+                <!-- 12. Assinatura Digital -->
+                <li><a href="#assinatura" class="menu-link" data-section="assinatura">
+                    <span class="icon">✍️</span>Assinatura Digital
+                </a></li>
+                
+                <!-- 13. Fotos e Anexos -->
+                <li><a href="#anexos" class="menu-link" data-section="anexos">
+                    <span class="icon">📷</span>Fotos e Anexos
+                </a></li>
+                
+                <!-- 14. Controle de Garantia -->
+                <li><a href="#garantia" class="menu-link" data-section="garantia">
+                    <span class="icon">🛡️</span>Controle de Garantia
+                </a></li>
+                
+                <!-- 15. Gestão de Usuários -->
+                <li><a href="#usuarios" class="menu-link" data-section="usuarios">
+                    <span class="icon">👤</span>Gestão de Usuários
+                </a></li>
+                
+                <!-- 16. Backup e Segurança -->
+                <li><a href="#backup" class="menu-link" data-section="backup">
+                    <span class="icon">💾</span>Backup e Segurança
+                </a></li>
+                
+                <!-- 17. Integração ERP/Contábil -->
+                <li><a href="#integracao" class="menu-link" data-section="integracao">
+                    <span class="icon">🔗</span>Integração ERP/Contábil
+                </a></li>
+            </ul>
+        </nav>
+
+        
+        <!-- ========== ÁREA DE CONTEÚDO PRINCIPAL ========== -->
+        <main class="main-content">
+            
+            <!-- === CABEÇALHO DO CONTEÚDO === -->
+            <header class="header">
+                <h1 id="page-title">Dashboard</h1>
+                <div class="user-info">
+                    <span>Usuário: Admin</span>
+                    <button class="logout-btn">Sair</button>
+                </div>
+            </header>
+
+            
+            <!-- === ÁREA DE CONTEÚDO DINÂMICO === -->
+            <div class="content-area">
+                
+                <!-- ========== PÁGINA 1: DASHBOARD ========== -->
+                <!-- Visão geral com estatísticas em tempo real -->
+                <section id="dashboard" class="content-section active">
+                    <!-- === GRID DE CARDS ESTATÍSTICOS === -->
+                    <div class="dashboard-grid">
+                        <!-- Card: Estatísticas de OS -->
+                        <div class="dashboard-card">
+                            <h3>Ordens de Serviço</h3>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">45</span>
+                                    <span class="stat-label">Abertas</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">15</span>
+                                    <span class="stat-label">Em Andamento</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">8</span>
+                                    <span class="stat-label">Prontas</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card: Estatísticas de Estoque -->
+                        <div class="dashboard-card">
+                            <h3>Estoque</h3>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">234</span>
+                                    <span class="stat-label">Peças Disponíveis</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">15</span>
+                                    <span class="stat-label">Estoque Baixo</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card: Faturamento -->
+                        <div class="dashboard-card">
+                            <h3>Faturamento</h3>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">R$ 15.750</span>
+                                    <span class="stat-label">Este Mês</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">R$ 3.200</span>
+                                    <span class="stat-label">Hoje</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card: Status dos Técnicos -->
+                        <div class="dashboard-card">
+                            <h3>Técnicos</h3>
+                            <div class="card-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">6</span>
+                                    <span class="stat-label">Ativos</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">23</span>
+                                    <span class="stat-label">Tarefas Pendentes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- === SEÇÃO DE ATIVIDADES RECENTES === -->
+                    <div class="recent-activity">
+                        <h3>Atividades Recentes</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <span class="activity-time">14:30</span>
+                                <span class="activity-text">Nova OS #1234 criada para cliente João Silva</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-time">13:45</span>
+                                <span class="activity-text">Orçamento #5678 aprovado pelo cliente Maria Santos</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-time">12:20</span>
+                                <span class="activity-text">Equipamento #9012 pronto para retirada</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <!-- ========== PÁGINA 2: CADASTRO DE CLIENTES ========== -->
+                <!-- Formulário para registro de informações de clientes -->
+                <section id="clientes" class="content-section">
+                    <h2>Cadastro de Clientes</h2>
+                    
+                    <!-- === FORMULÁRIO DE CLIENTE === -->
+                    <div class="form-container">
+                        <form class="client-form">
+                            <!-- Linha 1: Nome e CPF/CNPJ -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cliente-nome">Nome Completo</label>
+                                    <input type="text" id="cliente-nome" name="nome" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cliente-cpf">CPF/CNPJ</label>
+                                    <input type="text" id="cliente-cpf" name="cpf">
+                                </div>
+                            </div>
+                            <!-- Linha 2: Telefone e E-mail -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cliente-telefone">Telefone</label>
+                                    <input type="tel" id="cliente-telefone" name="telefone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cliente-email">E-mail</label>
+                                    <input type="email" id="cliente-email" name="email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cliente-endereco">Endereço Completo</label>
+                                <textarea id="cliente-endereco" name="endereco" rows="3"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Salvar Cliente</button>
+                                <button type="button" class="btn-secondary">Limpar</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- === LISTA DE CLIENTES === -->
+                    <div class="table-container">
+                        <h3>Clientes Cadastrados</h3>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Telefone</th>
+                                    <th>E-mail</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" class="empty-state">Nenhum cliente cadastrado</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                
+                <!-- ========== PÁGINA 3: CADASTRO DE EQUIPAMENTOS ========== -->
+                <!-- Formulário para registro de equipamentos que chegam para reparo -->
+                <section id="equipamentos" class="content-section">
+                    <h2>Cadastro de Equipamentos</h2>
+                    
+                    <!-- === FORMULÁRIO DE EQUIPAMENTO === -->
+                    <div class="form-container">
+                        <form class="equipment-form">
+                            <!-- Linha 1: Marca e Modelo -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="equip-marca">Marca</label>
+                                    <input type="text" id="equip-marca" name="marca" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="equip-modelo">Modelo</label>
+                                    <input type="text" id="equip-modelo" name="modelo" required>
+                                </div>
+                            </div>
+                            <!-- Linha 2: Número de Série e Tipo -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="equip-serie">Número de Série</label>
+                                    <input type="text" id="equip-serie" name="serie">
+                                </div>
+                                <div class="form-group">
+                                    <label for="equip-tipo">Tipo de Equipamento</label>
+                                    <select id="equip-tipo" name="tipo" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="notebook">Notebook</option>
+                                        <option value="desktop">Desktop</option>
+                                        <option value="smartphone">Smartphone</option>
+                                        <option value="tablet">Tablet</option>
+                                        <option value="impressora">Impressora</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="equip-problema">Descrição do Problema</label>
+                                <textarea id="equip-problema" name="problema" rows="4" required></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Salvar Equipamento</button>
+                                <button type="button" class="btn-secondary">Limpar</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                
+                <!-- ========== PÁGINA 4: ORDENS DE SERVIÇO ========== -->
+                <!-- Gestão completa de OS: criar, atualizar status, acompanhar -->
+                <section id="ordens-servico" class="content-section">
+                    <h2>Ordens de Serviço</h2>
+                    
+                    <!-- === CONTROLES DA OS === -->
+                    <div class="os-controls">
+                        <button class="btn-primary">Nova OS</button>
+                        <div class="filter-controls">
+                            <select class="filter-select">
+                                <option value="">Todos os Status</option>
+                                <option value="aberta">Aberta</option>
+                                <option value="analise">Em Análise</option>
+                                <option value="reparo">Em Reparo</option>
+                                <option value="aguardando">Aguardando Peça</option>
+                                <option value="pronta">Pronta</option>
+                                <option value="finalizada">Finalizada</option>
+                            </select>
+                            <input type="search" class="search-input" placeholder="Buscar OS...">
+                        </div>
+                    </div>
+                    
+                    <!-- === LISTA DE ORDENS DE SERVIÇO === -->
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>OS #</th>
+                                    <th>Cliente</th>
+                                    <th>Equipamento</th>
+                                    <th>Status</th>
+                                    <th>Data Entrada</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="6" class="empty-state">Nenhuma ordem de serviço encontrada</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                
+                <!-- ========== PÁGINA 5: CONTROLE DE ESTOQUE ========== -->
+                <!-- Gerenciamento de peças: quantidade, custo, alertas de estoque baixo -->
+                <section id="estoque" class="content-section">
+                    <h2>Controle de Estoque de Peças</h2>
+                    <p>Interface para gerenciamento de estoque de peças...</p>
+                </section>
+
+                
+                <!-- ========== PÁGINA 6: ORÇAMENTOS E APROVAÇÃO ========== -->
+                <!-- Criação de orçamentos detalhados e controle de aprovação -->
+                <section id="orcamentos" class="content-section">
+                    <h2>Orçamento e Aprovação</h2>
+                    <p>Interface para geração e aprovação de orçamentos...</p>
+                </section>
+
+                
+                <!-- ========== PÁGINA 7: HISTÓRICO DE REPAROS ========== -->
+                <!-- Consulta de reparos anteriores por cliente/equipamento -->
+                <section id="historico" class="content-section">
+                    <h2>Histórico de Reparos</h2>
+                    <p>Interface para consulta de histórico...</p>
+                </section>
+
+                
+                <!-- ========== PÁGINA 8: RELATÓRIOS E ANÁLISES ========== -->
+                <!-- Relatórios de faturamento, produtividade, peças mais usadas -->
+                <section id="relatorios" class="content-section">
+                    <h2>Relatórios e Análises</h2>
+                    <p>Interface para geração de relatórios...</p>
+                </section>
+
+                
+                <!-- ========== PÁGINA 9: AGENDA DE TÉCNICOS ========== -->
+                <!-- Distribuição de tarefas e agendamento de técnicos -->
+                <section id="agenda" class="content-section">
+                    <h2>Agenda de Técnicos e Gestão de Tarefas</h2>
+                    <p>Interface para agenda e distribuição de tarefas...</p>
+                </section>
+
+                
+                <!-- ========== PÁGINA 10: CHECK-IN/CHECK-OUT ========== -->
+                <!-- Controle de entrada e saída física de equipamentos -->
+                <section id="checkin-checkout" class="content-section">
+                    <h2>Check-in/Check-out de Equipamentos</h2>
+                    <p>Interface para controle de entrada e saída...</p>
+                </section>
+
+                
+                <!-- ========== PÁGINA 11: COMUNICAÇÃO ========== -->
+                <!-- Integração WhatsApp/SMS para atualizações automáticas -->
+                <section id="comunicacao" class="content-section">
+                    <h2>Integração com WhatsApp/SMS</h2>
+                    <p>Interface para comunicação com clientes...</p>
+                </section>
+
+                
+                <!-- ========== PÁGINA 12: ASSINATURA DIGITAL ========== -->
+                <!-- Sistema de assinatura digital para documentos -->
+                <section id="assinatura" class="content-section">
+                    <h2>Assinatura Digital de Documentos</h2>
+                    <p>Interface para assinatura digital...</p>
+                </section>
+
+                
+                <!-- ========== PÁGINA 13: FOTOS E ANEXOS ========== -->
+                <!-- Upload de imagens antes/depois e anexos de documentos -->
+                <section id="anexos" class="content-section">
+                    <h2>Fotos e Anexos na OS</h2>
+                    <p>Interface para upload de fotos e anexos...</p>
+                </section>
+
+                
+                <!-- ========== PÁGINA 14: CONTROLE DE GARANTIA ========== -->
+                <!-- Gestão de prazos de garantia e alertas de expiração -->
+                <section id="garantia" class="content-section">
+                    <h2>Controle de Garantia</h2>
+                    <p>Interface para controle de garantias...</p>
+                </section>
+
+                
+                <!-- ========== PÁGINA 15: GESTÃO DE USUÁRIOS ========== -->
+                <!-- Controle de acesso: técnicos, administradores, atendentes -->
+                <section id="usuarios" class="content-section">
+                    <h2>Multiusuário com Níveis de Acesso</h2>
+                    <p>Interface para gestão de usuários...</p>
+                </section>
+
+                
+                <!-- ========== PÁGINA 16: BACKUP E SEGURANÇA ========== -->
+                <!-- Sistema de backup automático e segurança de dados -->
+                <section id="backup" class="content-section">
+                    <h2>Backup e Segurança de Dados</h2>
+                    <p>Interface para backup e segurança...</p>
+                </section>
+
+                
+                <!-- ========== PÁGINA 17: INTEGRAÇÃO ERP ========== -->
+                <!-- Integração com sistemas contábeis e ERP externos -->
+                <section id="integracao" class="content-section">
+                    <h2>Integração com Sistemas Contábeis/ERP</h2>
+                    <p>Interface para integração com sistemas externos...</p>
+                </section>
+            </div>
+        </main>
+    </div>
+
     
-    <div id="titulos">
-      <h1>S</h1>
-      <h2>Log-in to your account</h2>
-    </div>
-
-    <form action="">
-      <input type="email" placeholder="E-mail addres">
-      <input type="password" placeholder="Password">
-      <button id="Login">Login</button>
-    </form>
-
-    <div id="new-user">
-      <p>New to us? <a href=""> Sign Up</a></p>
-    </div>
-  </div>
-
-
+    <!-- ========== SCRIPTS JAVASCRIPT ========== -->
+    <script src="script.js"></script>
 </body>
-
 </html>

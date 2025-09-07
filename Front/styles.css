@@ -27,7 +27,7 @@ body {
 ======================================== */
 .sidebar {
     width: 280px;
-    background-color: #6c757d; /* Fundo cinza */
+    background-color: #696969; /* Fundo cinza */
     color: white;
     position: fixed;
     height: 100vh;
@@ -98,13 +98,13 @@ body {
 }
 
 .menu-link:hover {
-    background-color: #dc3545; /* Hover vermelho conforme solicitado */
+    background-color: #af0012; /* Hover vermelho conforme solicitado */
     border-left-color: #fff;
     transform: translateX(5px);
 }
 
 .menu-link.active {
-    background-color: #dc3545;
+    background-color: #af0012;
     border-left-color: #fff;
 }
 
@@ -325,7 +325,7 @@ body {
 }
 
 .btn-primary {
-    background-color: #dc3545;
+    background-color: #af0012;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -498,4 +498,26 @@ body {
     .search-input {
         width: 200px;
     }
+}
+
+/*POP UP*/
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    gap: 15px;
+    border-radius: 10px;
 }

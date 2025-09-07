@@ -6,7 +6,7 @@ using paddockCcell.Models;
 
 namespace paddockCcell.Controllers
 {
-    [Route("Servico")]
+    [Route("")]
     public class ServicoController : Controller
     {
         private readonly AppDbContext _context;
@@ -19,7 +19,7 @@ namespace paddockCcell.Controllers
         }
 
         [HttpPost("novo-servico")]
-        public IActionResult Create(ServicoDTO servicoDTO)
+        public IActionResult Create([FromBody]ServicoDTO servicoDTO)
         {
             if (servicoDTO == null) return BadRequest("Dados inválidos");
 

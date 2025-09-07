@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <!-- ========== CABEÇALHO DA PÁGINA ========== -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Assistência Técnica</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- ========== CONTAINER PRINCIPAL ========== -->
-    <div class="container">
-        
+    <div id="container-principal" class="container">
+
         <!-- ========== MENU LATERAL ESQUERDO ========== -->
         <!-- Sidebar com fundo cinza, hover vermelho e espaço para logo -->
         <nav class="sidebar">
@@ -22,101 +24,101 @@
                 </div>
                 <h2>Assistência Técnica</h2>
             </div>
-            
+
             <!-- === MENU DE NAVEGAÇÃO === -->
             <!-- Lista com todas as 16 funcionalidades do sistema -->
-            <ul class="menu-items">
+            <ul class="menu-items" id="menu-itens">
                 <!-- 1. Dashboard Principal -->
                 <li><a href="#dashboard" class="menu-link active" data-section="dashboard">
-                    <span class="icon">📊</span>Dashboard
-                </a></li>
-                
+                        <span class="icon">📊</span>Dashboard
+                    </a></li>
+
                 <!-- 2. Cadastro de Clientes -->
                 <li><a href="#clientes" class="menu-link" data-section="clientes">
-                    <span class="icon">👥</span>Cadastro de Clientes
-                </a></li>
-                
+                        <span class="icon">👥</span>Cadastro de Clientes
+                    </a></li>
+
                 <!-- 3. Cadastro de Equipamentos -->
                 <li><a href="#equipamentos" class="menu-link" data-section="equipamentos">
-                    <span class="icon">🔧</span>Cadastro de Equipamentos
-                </a></li>
-                
+                        <span class="icon">🔧</span>Cadastro de Equipamentos
+                    </a></li>
+
                 <!-- 4. Ordens de Serviço (OS) -->
                 <li><a href="#ordens-servico" class="menu-link" data-section="ordens-servico">
-                    <span class="icon">📋</span>Ordens de Serviço
-                </a></li>
-                
+                        <span class="icon">📋</span>Ordens de Serviço
+                    </a></li>
+
                 <!-- 5. Controle de Estoque -->
                 <li><a href="#servicos" class="menu-link" data-section="servicos">
-                    <span class="icon">🧾</span>Serviços
-                </a></li>
-                
+                        <span class="icon">🧾</span>Serviços
+                    </a></li>
+
                 <!-- 6. Orçamentos e Aprovação -->
                 <li><a href="#orcamentos" class="menu-link" data-section="orcamentos">
-                    <span class="icon">💰</span>Orçamentos
-                </a></li>
-                
+                        <span class="icon">💰</span>Orçamentos
+                    </a></li>
+
                 <!-- 7. Histórico de Reparos -->
                 <li><a href="#historico" class="menu-link" data-section="historico">
-                    <span class="icon">📚</span>Histórico de Reparos
-                </a></li>
-                
+                        <span class="icon">📚</span>Histórico de Reparos
+                    </a></li>
+
                 <!-- 8. Relatórios e Análises -->
                 <li><a href="#relatorios" class="menu-link" data-section="relatorios">
-                    <span class="icon">📈</span>Relatórios e Análises
-                </a></li>
-                
+                        <span class="icon">📈</span>Relatórios e Análises
+                    </a></li>
+
                 <!-- 9. Agenda de Técnicos -->
                 <li><a href="#agenda" class="menu-link" data-section="agenda">
-                    <span class="icon">📅</span>Agenda de Técnicos
-                </a></li>
-                
+                        <span class="icon">📅</span>Agenda de Técnicos
+                    </a></li>
+
                 <!-- 10. Check-in/Check-out de Equipamentos -->
                 <li><a href="#checkin-checkout" class="menu-link" data-section="checkin-checkout">
-                    <span class="icon">📍</span>Check-in/Check-out
-                </a></li>
-                
+                        <span class="icon">📍</span>Check-in/Check-out
+                    </a></li>
+
                 <!-- 11. Comunicação WhatsApp/SMS -->
                 <li><a href="#comunicacao" class="menu-link" data-section="comunicacao">
-                    <span class="icon">💬</span>Comunicação (WhatsApp/SMS)
-                </a></li>
-                
+                        <span class="icon">💬</span>Comunicação (WhatsApp/SMS)
+                    </a></li>
+
                 <!-- 12. Assinatura Digital -->
                 <li><a href="#assinatura" class="menu-link" data-section="assinatura">
-                    <span class="icon">✍️</span>Assinatura Digital
-                </a></li>
-                
+                        <span class="icon">✍️</span>Assinatura Digital
+                    </a></li>
+
                 <!-- 13. Fotos e Anexos -->
                 <li><a href="#anexos" class="menu-link" data-section="anexos">
-                    <span class="icon">📷</span>Fotos e Anexos
-                </a></li>
-                
+                        <span class="icon">📷</span>Fotos e Anexos
+                    </a></li>
+
                 <!-- 14. Controle de Garantia -->
                 <li><a href="#garantia" class="menu-link" data-section="garantia">
-                    <span class="icon">🛡️</span>Controle de Garantia
-                </a></li>
-                
+                        <span class="icon">🛡️</span>Controle de Garantia
+                    </a></li>
+
                 <!-- 15. Gestão de Usuários -->
                 <li><a href="#usuarios" class="menu-link" data-section="usuarios">
-                    <span class="icon">👤</span>Gestão de Usuários
-                </a></li>
-                
+                        <span class="icon">👤</span>Gestão de Usuários
+                    </a></li>
+
                 <!-- 16. Backup e Segurança -->
                 <li><a href="#backup" class="menu-link" data-section="backup">
-                    <span class="icon">💾</span>Backup e Segurança
-                </a></li>
-                
+                        <span class="icon">💾</span>Backup e Segurança
+                    </a></li>
+
                 <!-- 17. Integração ERP/Contábil -->
                 <li><a href="#integracao" class="menu-link" data-section="integracao">
-                    <span class="icon">🔗</span>Integração ERP/Contábil
-                </a></li>
+                        <span class="icon">🔗</span>Integração ERP/Contábil
+                    </a></li>
             </ul>
         </nav>
 
-        
+
         <!-- ========== ÁREA DE CONTEÚDO PRINCIPAL ========== -->
         <main class="main-content">
-            
+
             <!-- === CABEÇALHO DO CONTEÚDO === -->
             <header class="header">
                 <h1 id="page-title">Dashboard</h1>
@@ -126,10 +128,10 @@
                 </div>
             </header>
 
-            
+
             <!-- === ÁREA DE CONTEÚDO DINÂMICO === -->
             <div class="content-area">
-                
+
                 <!-- ========== PÁGINA 1: DASHBOARD ========== -->
                 <!-- Visão geral com estatísticas em tempo real -->
                 <section id="dashboard" class="content-section active">
@@ -153,7 +155,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Card: Estatísticas de Estoque -->
                         <div class="dashboard-card">
                             <h3>Estoque</h3>
@@ -168,7 +170,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Card: Faturamento -->
                         <div class="dashboard-card">
                             <h3>Faturamento</h3>
@@ -183,7 +185,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Card: Status dos Técnicos -->
                         <div class="dashboard-card">
                             <h3>Técnicos</h3>
@@ -199,7 +201,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- === SEÇÃO DE ATIVIDADES RECENTES === -->
                     <div class="recent-activity">
                         <h3>Atividades Recentes</h3>
@@ -220,12 +222,11 @@
                     </div>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 2: CADASTRO DE CLIENTES ========== -->
                 <!-- Formulário para registro de informações de clientes -->
                 <section id="clientes" class="content-section">
-                    <h2>Cadastro de Clientes</h2>
-                    
+
                     <!-- === FORMULÁRIO DE CLIENTE === -->
                     <div class="form-container">
                         <form class="client-form">
@@ -261,7 +262,7 @@
                             </div>
                         </form>
                     </div>
-                    
+
                     <!-- === LISTA DE CLIENTES === -->
                     <div class="table-container">
                         <h3>Clientes Cadastrados</h3>
@@ -283,12 +284,12 @@
                     </div>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 3: CADASTRO DE EQUIPAMENTOS ========== -->
                 <!-- Formulário para registro de equipamentos que chegam para reparo -->
                 <section id="equipamentos" class="content-section">
                     <h2>Cadastro de Equipamentos</h2>
-                    
+
                     <!-- === FORMULÁRIO DE EQUIPAMENTO === -->
                     <div class="form-container">
                         <form class="equipment-form">
@@ -334,15 +335,14 @@
                     </div>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 4: ORDENS DE SERVIÇO ========== -->
                 <!-- Gestão completa de OS: criar, atualizar status, acompanhar -->
                 <section id="ordens-servico" class="content-section">
-                    <h2>Ordens de Serviço</h2>
-                    
+
                     <!-- === CONTROLES DA OS === -->
                     <div class="os-controls">
-                        <button class="btn-primary">Nova OS</button>
+                        <button id="nova-os" class="btn-primary" onclick="abrirPop()">Nova OS</button>
                         <div class="filter-controls">
                             <select class="filter-select">
                                 <option value="">Todos os Status</option>
@@ -356,7 +356,7 @@
                             <input type="search" class="search-input" placeholder="Buscar OS...">
                         </div>
                     </div>
-                    
+
                     <!-- === LISTA DE ORDENS DE SERVIÇO === -->
                     <div class="table-container">
                         <table class="data-table">
@@ -378,16 +378,49 @@
                         </table>
                     </div>
                 </section>
+                <!--POPUP-->
+                <div class="overlay" id="popupOverlay">
+                    <div class="popup">
+                        <label for="selecao-servico">Serviço</label>
+                        <select id="selecao-servico" class="filter-select">
+                            <option value=""></option>
+                            <option value="">Troca de tela Iphone 11</option>
+                            <option value="">Troca de bateria Iphone 11</option>
+                            <option value="">Reconfiguração de Firmaware Iphone 11</option>
+                        </select>
+                        <label for="selecao-cliente">Cliente</label>
+                        <select id="selecao-cliente" class="filter-select">
+                            <option value=""></option>
+                            <option value="">Lucas Daniel</option>
+                            <option value="">Luana Magno</option>
+                            <option value="">Lorenzo</option>
+                            <option value="">Ethan</option>
+                        </select>
+                        <button id="fecharBtn" class="btn-primary">Fechar</button>
+                    </div>
+                </div>
 
-                
+
                 <!-- ========== PÁGINA 5: SERVIÇOS ========== -->
                 <!-- Gerenciamento de serviços -->
                 <section id="servicos" class="content-section">
 
-                    <div class="os-controls">
-                        <button class="btn-primary">Novo Serviço</button>
-                        <input type="search" class="search-input" placeholder="Buscar serviços">
-                    </div>
+                    <form action="" class="equipment-form" id="form-servico">
+                        <div class="os-controls">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="descricao-servico">Descrição do serviço</label>
+                                    <input type="text" id="descricao-servico" name="descricao" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="valor-servico">Valor do serviço</label>
+                                    <input type="text" id="valor-servico" name="valor-servico">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-primary" id="novoServicoBtn"
+                                onclick="RegistrarServico()">Cadastrar serviço</button>
+                        </div>
+                    </form>
 
                     <div class="table-container">
                         <table class="data-table">
@@ -401,7 +434,7 @@
                     </div>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 6: ORÇAMENTOS E APROVAÇÃO ========== -->
                 <!-- Criação de orçamentos detalhados e controle de aprovação -->
                 <section id="orcamentos" class="content-section">
@@ -409,7 +442,7 @@
                     <p>Interface para geração e aprovação de orçamentos...</p>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 7: HISTÓRICO DE REPAROS ========== -->
                 <!-- Consulta de reparos anteriores por cliente/equipamento -->
                 <section id="historico" class="content-section">
@@ -417,7 +450,7 @@
                     <p>Interface para consulta de histórico...</p>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 8: RELATÓRIOS E ANÁLISES ========== -->
                 <!-- Relatórios de faturamento, produtividade, peças mais usadas -->
                 <section id="relatorios" class="content-section">
@@ -425,7 +458,7 @@
                     <p>Interface para geração de relatórios...</p>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 9: AGENDA DE TÉCNICOS ========== -->
                 <!-- Distribuição de tarefas e agendamento de técnicos -->
                 <section id="agenda" class="content-section">
@@ -433,7 +466,7 @@
                     <p>Interface para agenda e distribuição de tarefas...</p>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 10: CHECK-IN/CHECK-OUT ========== -->
                 <!-- Controle de entrada e saída física de equipamentos -->
                 <section id="checkin-checkout" class="content-section">
@@ -441,7 +474,7 @@
                     <p>Interface para controle de entrada e saída...</p>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 11: COMUNICAÇÃO ========== -->
                 <!-- Integração WhatsApp/SMS para atualizações automáticas -->
                 <section id="comunicacao" class="content-section">
@@ -449,7 +482,7 @@
                     <p>Interface para comunicação com clientes...</p>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 12: ASSINATURA DIGITAL ========== -->
                 <!-- Sistema de assinatura digital para documentos -->
                 <section id="assinatura" class="content-section">
@@ -457,7 +490,7 @@
                     <p>Interface para assinatura digital...</p>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 13: FOTOS E ANEXOS ========== -->
                 <!-- Upload de imagens antes/depois e anexos de documentos -->
                 <section id="anexos" class="content-section">
@@ -465,7 +498,7 @@
                     <p>Interface para upload de fotos e anexos...</p>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 14: CONTROLE DE GARANTIA ========== -->
                 <!-- Gestão de prazos de garantia e alertas de expiração -->
                 <section id="garantia" class="content-section">
@@ -473,7 +506,7 @@
                     <p>Interface para controle de garantias...</p>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 15: GESTÃO DE USUÁRIOS ========== -->
                 <!-- Controle de acesso: técnicos, administradores, atendentes -->
                 <section id="usuarios" class="content-section">
@@ -481,7 +514,7 @@
                     <p>Interface para gestão de usuários...</p>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 16: BACKUP E SEGURANÇA ========== -->
                 <!-- Sistema de backup automático e segurança de dados -->
                 <section id="backup" class="content-section">
@@ -489,7 +522,7 @@
                     <p>Interface para backup e segurança...</p>
                 </section>
 
-                
+
                 <!-- ========== PÁGINA 17: INTEGRAÇÃO ERP ========== -->
                 <!-- Integração com sistemas contábeis e ERP externos -->
                 <section id="integracao" class="content-section">
@@ -500,8 +533,9 @@
         </main>
     </div>
 
-    
+
     <!-- ========== SCRIPTS JAVASCRIPT ========== -->
     <script src="script.js"></script>
 </body>
+
 </html>

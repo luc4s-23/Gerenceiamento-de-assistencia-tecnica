@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("paddockCcell")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+221a1880de8bad1d6ec1b7827730e395e87ca35c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a98643609aaffb28079b78ceebc92bd2c3c5ce3")]
 [assembly: System.Reflection.AssemblyProductAttribute("paddockCcell")]
 [assembly: System.Reflection.AssemblyTitleAttribute("paddockCcell")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,5 +1,5 @@
 // Sistema de Navegação
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Elementos do DOM
     const menuLinks = document.querySelectorAll('.menu-link');
     const contentSections = document.querySelectorAll('.content-section');
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listeners para os links do menu
     menuLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const sectionId = this.getAttribute('data-section');
             showSection(sectionId);
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Gerenciar navegação do histórico do browser
-    window.addEventListener('popstate', function() {
+    window.addEventListener('popstate', function () {
         const hash = window.location.hash.substring(1);
         if (hash && document.getElementById(hash)) {
             showSection(hash);
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Verificar hash na URL ao carregar a página
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         const hash = window.location.hash.substring(1);
         if (hash && document.getElementById(hash)) {
             showSection(hash);
@@ -89,15 +89,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Formulário de Clientes
     const clientForm = document.querySelector('.client-form');
     if (clientForm) {
-        clientForm.addEventListener('submit', function(e) {
+        clientForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Aqui você conectaria com sua API
             const formData = new FormData(this);
             const clientData = Object.fromEntries(formData);
-            
+
             console.log('Dados do cliente:', clientData);
-            
+
             // Simular salvamento
             alert('Cliente salvo com sucesso! (Conecte com sua API)');
             this.reset();
@@ -107,15 +107,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Formulário de Equipamentos
     const equipmentForm = document.querySelector('.equipment-form');
     if (equipmentForm) {
-        equipmentForm.addEventListener('submit', function(e) {
+        equipmentForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Aqui você conectaria com sua API
             const formData = new FormData(this);
             const equipmentData = Object.fromEntries(formData);
-            
+
             console.log('Dados do equipamento:', equipmentData);
-            
+
             // Simular salvamento
             alert('Equipamento cadastrado com sucesso! (Conecte com sua API)');
             this.reset();
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const clearButtons = document.querySelectorAll('.btn-secondary');
     clearButtons.forEach(button => {
         if (button.textContent.trim() === 'Limpar') {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 const form = this.closest('form');
                 if (form) {
                     form.reset();
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Botão de logout
     const logoutBtn = document.querySelector('.logout-btn');
     if (logoutBtn) {
-        logoutBtn.addEventListener('click', function() {
+        logoutBtn.addEventListener('click', function () {
             if (confirm('Tem certeza que deseja sair?')) {
                 // Aqui você implementaria a lógica de logout
                 alert('Logout realizado! (Implementar lógica de logout)');
@@ -146,22 +146,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    //Botão para abrir PopUp
+    const abrirPop = document.getElementById("nova-os");
+    const fecharPop = document.getElementById("fecharBtn");
+    const overlay = document.getElementById("popupOverlay");
+
+    abrirPop.addEventListener('click', () => {
+        overlay.style.display = "flex";
+    })
+
+    fecharPop.addEventListener('click', () => {
+        overlay.style.display = "none";
+    })
+
+
     // Upload de logo (simulado)
     const logoPlaceholder = document.querySelector('.logo-placeholder');
     if (logoPlaceholder) {
-        logoPlaceholder.addEventListener('click', function() {
+        logoPlaceholder.addEventListener('click', function () {
             const input = document.createElement('input');
             input.type = 'file';
             input.accept = 'image/*';
-            
-            input.addEventListener('change', function(e) {
+
+            input.addEventListener('change', function (e) {
                 const file = e.target.files[0];
                 if (file) {
                     const reader = new FileReader();
-                    reader.onload = function(e) {
+                    reader.onload = function (e) {
                         const img = logoPlaceholder.querySelector('img');
                         const text = logoPlaceholder.querySelector('.logo-text');
-                        
+
                         img.src = e.target.result;
                         img.style.display = 'block';
                         text.style.display = 'none';
@@ -169,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     reader.readAsDataURL(file);
                 }
             });
-            
+
             input.click();
         });
     }
@@ -177,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Filtros e busca nas tabelas (simulado)
     const searchInputs = document.querySelectorAll('.search-input');
     searchInputs.forEach(input => {
-        input.addEventListener('input', function() {
+        input.addEventListener('input', function () {
             const searchTerm = this.value.toLowerCase();
             console.log('Buscar por:', searchTerm);
             // Aqui você implementaria a busca real conectando com sua API
@@ -186,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const filterSelects = document.querySelectorAll('.filter-select');
     filterSelects.forEach(select => {
-        select.addEventListener('change', function() {
+        select.addEventListener('change', function () {
             const filterValue = this.value;
             console.log('Filtrar por:', filterValue);
             // Aqui você implementaria o filtro real conectando com sua API
@@ -197,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function createMobileToggle() {
         if (window.innerWidth <= 768) {
             let toggleButton = document.querySelector('.mobile-toggle');
-            
+
             if (!toggleButton) {
                 toggleButton = document.createElement('button');
                 toggleButton.className = 'mobile-toggle';
@@ -215,10 +229,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     font-size: 18px;
                     cursor: pointer;
                 `;
-                
+
                 document.body.appendChild(toggleButton);
-                
-                toggleButton.addEventListener('click', function() {
+
+                toggleButton.addEventListener('click', function () {
                     const sidebar = document.querySelector('.sidebar');
                     sidebar.classList.toggle('open');
                 });
@@ -236,10 +250,10 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', createMobileToggle);
 
     // Fechar menu lateral quando clicar fora (mobile)
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         const sidebar = document.querySelector('.sidebar');
         const toggleButton = document.querySelector('.mobile-toggle');
-        
+
         if (window.innerWidth <= 768 && sidebar.classList.contains('open')) {
             if (!sidebar.contains(e.target) && e.target !== toggleButton) {
                 sidebar.classList.remove('open');
@@ -255,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function formatCpfCnpj(value) {
     // Remove tudo que não é dígito
     value = value.replace(/\D/g, '');
-    
+
     if (value.length <= 11) {
         // CPF
         value = value.replace(/(\d{3})(\d)/, '$1.$2');
@@ -268,29 +282,29 @@ function formatCpfCnpj(value) {
         value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
         value = value.replace(/(\d{4})(\d)/, '$1-$2');
     }
-    
+
     return value;
 }
 
 // Função utilitária para formatar telefone
 function formatPhone(value) {
     value = value.replace(/\D/g, '');
-    
+
     if (value.length <= 10) {
         value = value.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
     } else {
         value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
     }
-    
+
     return value;
 }
 
 // Aplicar formatação automática nos campos
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Formatação de CPF/CNPJ
     const cpfInputs = document.querySelectorAll('input[name="cpf"]');
     cpfInputs.forEach(input => {
-        input.addEventListener('input', function() {
+        input.addEventListener('input', function () {
             this.value = formatCpfCnpj(this.value);
         });
     });
@@ -298,8 +312,55 @@ document.addEventListener('DOMContentLoaded', function() {
     // Formatação de telefone
     const phoneInputs = document.querySelectorAll('input[type="tel"]');
     phoneInputs.forEach(input => {
-        input.addEventListener('input', function() {
+        input.addEventListener('input', function () {
             this.value = formatPhone(this.value);
         });
     });
 });
+
+
+//==================================================
+
+
+
+async function RegistrarServico() {
+    const URL_servico = 'http://localhost:5096/novo-servico';
+
+    const form = document.getElementById('form-servico').addEventListener('submit', async (e) => {
+        e.preventDefault(); // Prevents the default form submission
+
+        const NomeServico = document.getElementById("descricao-servico").value;
+        const ValorServico = parseFloat(document.getElementById("valor-servico").value);
+
+        const servico = {
+            NomeServico,
+            ValorServico
+        };
+
+        try {
+            const response = await fetch(URL_servico, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(servico),
+            });
+
+            if (!response.ok) {
+                // If the response is not successful, it throws an error to be caught by 'catch'.
+                const errorData = await response.json(); // Gets the detailed error from the API, if available
+                throw new Error(errorData.mensagem || 'Erro na requisição');
+            }
+
+            const data = await response.json();
+            console.log('Sucesso!', data);
+            alert('Serviço criado com sucesso!');
+
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+            alert('Ocorreu um erro ao criar o serviço.');
+        }
+    });
+
+    form.addEventListener('reset');
+}
